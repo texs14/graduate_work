@@ -1,0 +1,6 @@
+@import url(./__title/search__title.css);
+@import url(./__paragraph/search__paragraph.css);
+@import url(./__buttom/search__buttom.css);
+.search {
+    width: 608px;
+}

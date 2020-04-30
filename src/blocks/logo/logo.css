@@ -1,0 +1,6 @@
+@import url(./__link/logo__link.css);
+.logo {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
