@@ -1,6 +1,9 @@
 @import url(./__item/menu__item.css);
 @import url(./__link/menu__link.css);
+@import url(./__link/_theme/menu__link_theme_black.css);
+@import url(./__link/_theme/menu__link_theme_white.css);
 @import url(./__link/menu__link_active.css);
+@import url(./__item/_place/menu__item_place_footer.css);
 .menu {
     display: flex;
     align-items: center;

@@ -3,7 +3,5 @@
     flex-flow: column;
 
 	min-height: 282px;
-    max-width: 1440px;
     background-color:  #f5f6f7;;
-    margin: auto;
 }

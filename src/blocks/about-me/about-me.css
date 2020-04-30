@@ -1,0 +1,11 @@
+@import url(./__text-wrapper/about-me__text-wrapper.css);
+@import url(./__photo/about-me__photo.css);
+@import url(./__title/about-me__title.css);
+@import url(./__paragraph/about-me__paragraph.css);
+
+.about-me {
+    display: flex;
+    height: 624px;
+    box-sizing: border-box;
+    padding: 80px 216px 80px 104px;
+}
