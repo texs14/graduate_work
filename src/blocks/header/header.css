@@ -4,8 +4,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 576px;
-    width: 100%;
+    max-width: 1440px;
     color: #fff;
+    margin: auto;
 }
 
 .header__search {

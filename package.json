@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/texs14/graduate_work/issues"
   },
-  "homepage": "https://github.com/texs14/graduate_work",
+  "homepage": "https://texs14.github.io/graduate_work",
   "devDependencies": {
     "@babel/cli": "7.8.4",
     "@babel/core": "7.9.0",

@@ -6,4 +6,9 @@
     height: 64px;
     width: 600px;
     padding: 21px 170px 21px 24px;
+    font-family: 'Roboto', Helvetica, sans-serif, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
 }

@@ -1,3 +1,31 @@
+@font-face {
+    font-family: "Roboto";
+    src:url(./vendor/roboto-regular.woff);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src:url(./vendor/roboto-medium.woff);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto Slab";
+    src:url(./vendor/robotoslab-regular.woff);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto Slab";
+    src:url(./vendor/sourcesanspro-regular.woff);
+    font-weight: bold;
+    font-style: normal;
+}
+
 @import url(./normolaize.css);
 @import url(./blocks/header/header.css);
 @import url(./blocks/nav-menu/nav-menu.css);
@@ -5,3 +33,6 @@
 @import url(./blocks/logo/logo.css);
 @import url(./blocks/search/search.css);
 @import url(./blocks/search-form/search-form.css);
+@import url(./blocks/preloader/preloader.css);
+@import url(./blocks/circle-preloader/circle-preloader.css);
+@import url(./blocks/search-result/search-result.css);

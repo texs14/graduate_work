@@ -1,6 +1,9 @@
 .logo__link {
     color: #fff;
     text-decoration: none;
+    font-family: 'Roboto Slab', Helvetica, sans-serif, sans-serif;    font-weight: 500;
+    font-style: normal;
+    padding-top: 5px;
     font-size: 20px;
     line-height: 24px;
 }
