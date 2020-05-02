@@ -1,27 +1,27 @@
 @font-face {
     font-family: "Roboto";
-    src:url(./vendor/roboto-regular.woff);
+    src: url(./vendor/roboto-regular.woff);
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Roboto";
-    src:url(./vendor/roboto-medium.woff);
+    src: url(./vendor/roboto-medium.woff);
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Roboto Slab";
-    src:url(./vendor/robotoslab-regular.woff);
+    src: url(./vendor/robotoslab-regular.woff);
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Roboto Slab";
-    src:url(./vendor/sourcesanspro-regular.woff);
+    src: url(./vendor/sourcesanspro-regular.woff);
     font-weight: bold;
     font-style: normal;
 }
@@ -40,3 +40,4 @@
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/copyright/copyright.css);
 @import url(./blocks/social/social.css);
+@import url(./blocks/not-found/not-found.css);

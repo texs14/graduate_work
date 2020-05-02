@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.index.css %>">
 </head>
+
 <body>
     <header class="header">
         <nav class="nav-menu-header nav-menu-header_theme_white">
@@ -26,19 +28,55 @@
     </header>
     <main class="main">
         <section class="search-result">
-            <div class="preloader">
+            <div class="preloader" style="display: none;">
                 <i class="preloader__circle"></i>
                 <p class="preloader__paragraph">Идет поиск новостей...</p>
+            </div>
+            <div class="not-found search-result__not-found" style="display: none;">
+                <img src="<%=require('./images/not-found_v1.png').default%>" alt="">
+                <h2 class="not-found__title">Ничего не найдено</h2>
+                <p class="not-found__paragraph">К сожалению по вашему запросу ничего не найдено.</p>
+            </div>
+            <div class="news">
+                <div class="news__text-wrapper">
+                    <h2 class="news__title"></h2>
+                    <a href="">
+                        <news__link-analitics></news__link-analitics>
+                        <ul>
+                            <news__list>
+                                <li class="news__card">
+                                    <img src="" alt="" class="news__card-image">
+                                    <time class="news__card-date"></time>
+                                    <h2 class="news__card-title"></h2>
+                                    <p class="news__card-paragraph"></p>
+                                    <address class="news__card-newspaper"></address>
+                                </li>
+                                <li class="news__card">
+                                    <img src="" alt="" class="news__card-image">
+                                    <time class="news__card-date"></time>
+                                    <h2 class="news__card-title"></h2>
+                                    <p class="news__card-paragraph"></p>
+                                    <address class="news__card-newspaper"></address>
+                                </li>
+                                <li class="news__card">
+                                    <img src="" alt="" class="news__card-image">
+                                    <time class="news__card-date"></time>
+                                    <h2 class="news__card-title"></h2>
+                                    <p class="news__card-paragraph"></p>
+                                    <address class="news__card-newspaper"></address>
+                                </li>
+                            </news__list>
+                        </ul>
+                    </a>
+                </div>
             </div>
         </section>
         <section class="about-me">
             <img src="<%=require('./images/W-xWCeWyze8.jpg').default%>" alt="" class="about-me__photo">
             <div class="about-me__text-wrapper">
                 <h2 class="about-me__title">Об авторе</h2>
-                <p class="about-me__paragraph">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь,
-                     какими технологиями разработки владеете.</p>
-                <p class="about-me__paragraph">Также можно рассказать о процессе обучения в Практикуме,
-                     чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+                <p class="about-me__paragraph">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+                <p class="about-me__paragraph">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
             </div>
         </section>
     </main>
@@ -52,10 +90,15 @@
             </ul>
         </nav>
         <ul class="social footer__social">
-            <li class="social__item"><a href="" class="social__link"></a></li>
-            <li class="social__item"><a href="" class="social__link"></a></li>
+            <li class="social__item">
+                <a href="" class="social__link"></a>
+            </li>
+            <li class="social__item">
+                <a href="" class="social__link"></a>
+            </li>
         </ul>
     </footer>
-    <script src="<%= htmlWebpackPlugin.files.chunks.index.entry %>"></script> 
+    <script src="<%= htmlWebpackPlugin.files.chunks.index.entry %>"></script>
 </body>
+
 </html>
