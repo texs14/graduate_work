@@ -5,5 +5,29 @@
     height: 80px;
     margin: auto;
     box-sizing: border-box;
-    padding: 0px 106px 0 104px;
+    margin: 0px 106px 0 104px;
+}
+
+@media (max-width: 870px) {
+    .footer {
+        height: 64px;
+        margin: 0px 40px;
+    }
+}
+
+@media (max-width: 680px) {
+    .footer {
+        flex-wrap: wrap;
+    }
+
+    .footer__menu {
+        flex-flow: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 420px) {
+    .footer {
+        margin: 32px 16px;
+    }
 }

@@ -3,5 +3,25 @@
     font-size: 18px;
     line-height: 24px;
     margin: 0 0 64px 0;
-    max-width: 545px;
+    /* max-width: 545px; */
+}
+
+@media (max-width: 768px) {
+    .search__paragraph {
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 450px) {
+    .search__paragraph {
+        margin-bottom: 64px;
+    }
+}
+
+@media (max-width: 320px) {
+    .search__paragraph {
+        font-size: 20px;
+        line-height: 26px;
+        margin-bottom: 64px;
+    }
 }

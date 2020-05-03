@@ -1,0 +1,13 @@
+.news__card-paragraph {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+}
+
+@media (max-width: 820px) {
+    .news__card-paragraph {
+        margin-bottom: 12px;
+    }
+}

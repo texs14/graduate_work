@@ -1,6 +1,9 @@
+@import url(./social__link_face.css);
+@import url(./social__link_git.css);
+
 .social__link {
     display: block;
     width: 20px;
     height: 20px;
-    background-color: #000;
+    background-size: cover;
 }

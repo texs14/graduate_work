@@ -1,0 +1,10 @@
+.nav-menu-footer {
+}
+
+@media (max-width: 680px) {
+    .nav-menu-footer {
+        flex-flow: column;
+        margin-right: 50px;
+        margin-bottom: 40px;
+    }
+}

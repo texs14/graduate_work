@@ -2,9 +2,16 @@
     color: #fff;
     text-decoration: none;
     font-family: 'Roboto Slab', Helvetica, sans-serif;
-    font-weight: 500;
+    font-weight: bold;
     font-style: normal;
     padding-top: 6px;
     font-size: 20px;
     line-height: 24px;
+}
+
+
+@media (max-width: 370px) {
+    .logo__link {
+        font-size: 16px;
+    }
 }

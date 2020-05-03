@@ -5,3 +5,33 @@
 
     margin-right: 56px;
 }
+
+@media (max-width: 1200px) {
+    .about-me__photo {
+        width: 347px;
+        height: 347px;
+    }
+}
+
+@media (max-width: 820px) {
+    .about-me__photo {
+        width: 232px;
+        height: 232px;
+    }
+}
+
+@media (max-width: 680px) {
+    .about-me__photo {
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 410px) {
+    .about-me__photo {
+        width: 232px;
+        height: 232px;
+    }
+}

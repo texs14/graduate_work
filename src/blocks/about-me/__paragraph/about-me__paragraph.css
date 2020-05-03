@@ -8,3 +8,9 @@
 .about-me__paragraph:last-child {
     margin-bottom: 0;
 }
+
+@media (max-width: 1200px) {
+    .about-me__paragraph {
+        margin-bottom: 0;
+    }
+}

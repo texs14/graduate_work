@@ -7,3 +7,28 @@
     margin: 0 0 32px 0;
     max-width: 545px;
 }
+
+@media (max-width: 768px) {
+    .search__title {
+        font-size: 36px;
+        line-height: 40px;
+        width: 390px;
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 440px) {
+    .search__title {
+        font-size: 36px;
+        line-height: 40px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .search__title {
+        font-size: 36px;
+        line-height: 40px;
+        width: 280px;
+    }
+}

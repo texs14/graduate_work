@@ -10,3 +10,9 @@
     font-size: 18px;
     line-height: 24px;
 }
+
+@media (max-width: 450px) {
+    .menu__link {
+        font-size: 16px;
+    }
+}
