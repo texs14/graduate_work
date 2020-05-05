@@ -1,4 +1,4 @@
-.header {
+.header-index {
     background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
     background-position: center;
     background-size: cover;
@@ -9,37 +9,34 @@
     margin: auto;
 }
 
-.header__search {
+.header-index__search {
     margin: 80px auto 0 auto;
 }
 
 @media (max-width: 768px) {
-    .header {
+    .header-index {
         height: 400px;
     }
-
-    .header__search {
+    .header-index__search {
         margin: 40px auto 0 auto;
     }
 }
 
 @media (max-width: 450px) {
-    .header {
+    .header-index {
         height: 520px;
     }
-
-    .header__search {
+    .header-index__search {
         margin: 40px auto 0 auto;
     }
 }
 
 @media (max-width: 320px) {
-    .header {
+    .header-index {
         height: 536px;
         background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash_mobaill.jpg);
     }
-
-    .header__search {
+    .header-index__search {
         margin: 30px auto 0 auto;
     }
 }

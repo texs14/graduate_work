@@ -1,0 +1,33 @@
+.technologies__item {
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+    font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+.technologies__item::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 8px;
+}
+
+.technologies__item:nth-child(1)::after {
+    background-image: url(../../../images/html.png);
+}
+
+.technologies__item:nth-child(2)::after {
+    background-image: url(../../../images/css.png);
+}
+
+.technologies__item:nth-child(3)::after {
+    background-image: url(../../../images/js.png);
+}
+
+.technologies__item:nth-child(4)::after {
+    background-image: url(../../../images/Group.png);
+}

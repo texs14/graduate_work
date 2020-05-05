@@ -1,5 +1,5 @@
 @import url(./__link/logo__link.css);
-@import url(./__link/_theme/logo__link_theme_black.css);
+@import url(./__link/_theme/logo__link_theme_dark.css);
 @import url(./__link/_theme/logo__link_theme_white.css);
 .logo {
     margin: 0;

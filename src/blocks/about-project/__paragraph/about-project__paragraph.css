@@ -1,0 +1,12 @@
+.about-project__paragraph {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+}
+
+@media (max-width: 1040px) {
+    .about-project__paragraph {
+        width: fit-content;
+    }
+}
