@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.about.css %>">
 </head>
 
@@ -45,6 +46,86 @@
             <p class="about-me__paragraph">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
         </div>
     </section>
+    <section class="slaider">
+        <div class="slaider__text-wrapper">
+            <h2 class="slaider__title">История коммитов из GitHub</h2>
+            <a href="" class="slaider__link">Открыть в Github &Tab; &Tab;</a>
+        </div>
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="card-comment">
+                        <time class="card-comment__date">14 августа, 2019</time>
+                        <img src="<%=require('../images/W-xWCeWyze8.jpg').default%>" alt="" class="card-comment__photo">
+                        <a href="mailto:anton@yandex.ru" class="card-comment__email">anton@yandex.ru</a>
+                        <p class="card-comment__name">Антон Долинин</p>
+                        <p class="card-comment__paragraph">Emmet (formerly Zen Coding) is a web- developer’s toolkit
+                        that can greatly improve your HTML & CSS workflow.
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card-comment">
+                        <time class="card-comment__date">14 августа, 2019</time>
+                        <img src="<%=require('../images/W-xWCeWyze8.jpg').default%>" alt="" class="card-comment__photo">
+                        <p class="card-comment__name">Антон Долинин</p>
+                        <a href="mailto:anton@yandex.ru" class="card-comment__email">anton@yandex.ru</a>
+                        <p class="card-comment__paragraph">Emmet (formerly Zen Coding) is a web- developer’s toolkit
+                            that can greatly improve your HTML & CSS workflow.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card-comment">
+                        <time class="card-comment__date">14 августа, 2019</time>
+                        <img src="<%=require('../images/W-xWCeWyze8.jpg').default%>" alt="" class="card-comment__photo">
+                        <p class="card-comment__name">Антон Долинин</p>
+                        <a href="mailto:anton@yandex.ru" class="card-comment__email">anton@yandex.ru</a>
+                        <p class="card-comment__paragraph">Emmet (formerly Zen Coding) is a web- developer’s toolkit
+                            that can greatly improve your HTML & CSS workflow.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card-comment">
+                        <time class="card-comment__date">14 августа, 2019</time>
+                        <img src="<%=require('../images/W-xWCeWyze8.jpg').default%>" alt="" class="card-comment__photo">
+                        <p class="card-comment__name">Антон Долинин</p>
+                        <a href="mailto:anton@yandex.ru" class="card-comment__email">anton@yandex.ru</a>
+                        <p class="card-comment__paragraph">Emmet (formerly Zen Coding) is a web- developer’s toolkit
+                            that can greatly improve your HTML & CSS workflow.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card-comment">
+                        <time class="card-comment__date">14 августа, 2019</time>
+                        <img src="<%=require('../images/W-xWCeWyze8.jpg').default%>" alt="" class="card-comment__photo">
+                        <p class="card-comment__name">Антон Долинин</p>
+                        <a href="mailto:anton@yandex.ru" class="card-comment__email">anton@yandex.ru</a>
+                        <p class="card-comment__paragraph">Emmet (formerly Zen Coding) is a web- developer’s toolkit
+                            that can greatly improve your HTML & CSS workflow.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card-comment">
+                        <time class="card-comment__date">14 августа, 2019</time>
+                        <img src="<%=require('../images/W-xWCeWyze8.jpg').default%>" alt="" class="card-comment__photo">
+                        <p class="card-comment__name">Антон Долинин</p>
+                        <a href="mailto:anton@yandex.ru" class="card-comment__email">anton@yandex.ru</a>
+                        <p class="card-comment__paragraph">Emmet (formerly Zen Coding) is a web- developer’s toolkit
+                            that can greatly improve your HTML & CSS workflow.</p>
+                    </div>
+                 </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        
+        </div>
+    </section>    
     <footer class="footer">
         <span class="copyright">&COPY; 2020 Supersite</span>
         <nav class="nav-menu-footer">
@@ -64,6 +145,33 @@
         </ul>
     </footer>
     <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+          // Optional parameters
+          direction: 'horizontal',
+          loop: true,
+      
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+          },
+
+          loop: false,
+          slidesPerView: 3,
+          spaceBetween: 30,
+          freeMode: true,
+          grabCursor: true,
+          
+      
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+
+        })
+        </script>
 </body>
 
 </html>

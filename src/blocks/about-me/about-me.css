@@ -5,9 +5,11 @@
 
 .about-me {
     display: flex;
+    max-width: 1440px;
     height: 624px;
     box-sizing: border-box;
     padding: 80px 15% 80px 104px;
+    margin: auto;
 }
 
 @media (max-width: 1200px) {

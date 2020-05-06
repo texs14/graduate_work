@@ -3,6 +3,11 @@
     font-size: 18px;
     line-height: 24px;
     font-family: 'Roboto', Helvetica, sans-serif;
+    margin-right: 34px;
+}
+
+.technologies__item:last-child {
+    margin-right: 0;
 }
 
 .technologies__item::after {
@@ -30,4 +35,10 @@
 
 .technologies__item:nth-child(4)::after {
     background-image: url(../../../images/Group.png);
+}
+
+@media (max-width: 1090px) {
+    .technologies__item {
+        margin-right: 0;
+    }
 }

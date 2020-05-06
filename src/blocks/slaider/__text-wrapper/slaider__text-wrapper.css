@@ -1,0 +1,21 @@
+.slaider__text-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 7px;
+    margin-bottom: 64px;
+}
+
+@media (max-width: 820px) {
+    .slaider__text-wrapper {
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width: 680px) {
+    .slaider__text-wrapper {
+        flex-flow: column;
+        align-items: start;
+        margin-bottom: 36px;
+    }
+}

@@ -1,0 +1,35 @@
+@import url(./__link/slaider__link.css);
+@import url(./__text-wrapper/slaider__text-wrapper.css);
+@import url(./__title/slaider__title.css);
+
+.slaider {
+    overflow: hidden;
+    max-width: 1440px;
+    padding: 72px 104px 85px 104px ;
+    margin: auto;
+    box-sizing: border-box;
+    background: #f5f6f7;
+    position: relative;
+}
+.slaider::before,
+.slaider::after {
+    content: "";
+    display: block;
+    background:  rgb(244, 245, 246);;
+    background: linear-gradient(90deg, rgba(244, 245, 246, 0.959) 25%, rgba(0,212,255,0) 100%);
+    width: 104px;
+    height: 100px;
+    position: absolute;
+    height: 100%;
+    z-index: 99;
+    top: 0;
+
+}
+.slaider::before {
+    left: 0;
+}
+
+.slaider::after {
+    right: 0;
+    transform: rotate(180deg);
+}

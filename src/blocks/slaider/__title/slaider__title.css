@@ -1,0 +1,21 @@
+.slaider__title {
+    margin: 0;
+    font-family: 'Roboto Slab', Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 46px;
+    font-weight: normal;
+}
+
+@media (max-width: 820px) {
+    .slaider__title {
+        font-size: 30px;
+        line-height: 34px;
+    }
+}
+
+
+@media (max-width: 680px) {
+    .slaider__title {
+        margin-bottom: 16px;;
+    }
+}
