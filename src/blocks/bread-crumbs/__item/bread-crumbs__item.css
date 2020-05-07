@@ -1,0 +1,9 @@
+.bread-crumbs__item {
+    margin-left: 3px;
+    font-family: 'Roboto', Helvetica, sans-serif;
+    color: #b6bcfb;
+}
+
+.bread-crumbs__item:first-child {
+    margin-left: 0;
+}

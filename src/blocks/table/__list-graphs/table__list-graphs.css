@@ -1,0 +1,12 @@
+.table__list-graphs {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}

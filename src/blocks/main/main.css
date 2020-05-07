@@ -3,3 +3,19 @@
     margin: auto;
     color: #1A1B22;
 }
+
+.main__bread-crumbs {
+    margin: 40px auto 80px auto;
+}
+
+.main__serch-info-text {
+    margin: 0 auto 80px;
+    padding-left: 104px;
+    max-width: 1440px;
+}
+
+.main__schedule {
+    max-width: 1440px;
+    height: 886px;
+    margin: auto;
+}

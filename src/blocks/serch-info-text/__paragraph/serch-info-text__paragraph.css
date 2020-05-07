@@ -1,0 +1,11 @@
+.serch-info-text__paragraph {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 0 4px;
+}
+
+.serch-info-text__paragraph:last-child {
+    margin: 0;
+}

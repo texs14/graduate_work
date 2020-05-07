@@ -9,73 +9,79 @@ const isDev = process.env.NODE_ENV === 'development';
 
 
 module.exports = {
-  entry: {
-    index: './src/index.js',
-    about: './src/about/index.js'
-  },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
-  },
+    entry: {
+        index: './src/index.js',
+        about: './src/about/index.js',
+        analytics: './src/analytics/index.js'
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].[chunkhash].js'
+    },
 
-  module: {
-    rules: [{
-        test: /\.css$/i,
-        use: [
-          (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-          'css-loader',
-          'postcss-loader'
+    module: {
+        rules: [{
+                test: /\.css$/i,
+                use: [
+                    (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+                    'css-loader',
+                    'postcss-loader'
+                ]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
+            },
+            {
+                test: /\.(png|jpg|gif|ico|svg)$/,
+                use: [
+                    'file-loader?name=./images/[name].[ext]',
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {}
+                    },
+                ]
+            },
+            {
+                test: /\.(eot|ttf|woff|woff2)$/,
+                loader: 'file-loader?name=./vendor/[name].[ext]'
+            }
         ]
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
-      },
-      {
-        test: /\.(png|jpg|gif|ico|svg)$/,
-        use: [
-          'file-loader?name=./images/[name].[ext]',
-          {
-            loader: 'image-webpack-loader',
-            options: {}
-          },
-        ]
-      },
-      {
-        test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=./vendor/[name].[ext]'
-      }
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css'
+        }),
+
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorPluginOptions: {
+                preset: ['default'],
+            },
+            canPrint: true
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            template: './src/index.html',
+            filename: 'index.html'
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            template: './src/about/about.html',
+            filename: 'about.html'
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            template: './src/analytics/analytics.html',
+            filename: 'analytics.html'
+        }),
+        new WebpackMd5Hash(),
+        new webpack.DefinePlugin({
+            'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        })
     ]
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
-    }),
-
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'),
-      cssProcessorPluginOptions: {
-        preset: ['default'],
-      },
-      canPrint: true
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      template: './src/index.html',
-      filename: 'index.html'
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      template: './src/about/about.html',
-      filename: 'about.html'
-    }),
-    new WebpackMd5Hash(),
-    new webpack.DefinePlugin({
-      'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    })
-  ]
 };

@@ -1,0 +1,12 @@
+.table__title {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #b6bcbf;
+    text-transform: uppercase;
+    display: block;
+    border-bottom: 1px solid #1a1b22;
+    padding-bottom: 24px;
+    margin-bottom: 16px;
+}
