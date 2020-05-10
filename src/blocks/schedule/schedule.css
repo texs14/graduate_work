@@ -7,3 +7,15 @@
 .schedule__table {
     margin: 0 104px;
 }
+
+@media (max-width: 768px) {
+    .schedule__table {
+        margin: 0 40px;
+    }
+}
+
+@media (max-width: 450px) {
+    .schedule__table {
+        margin: 0 16px;
+    }
+}

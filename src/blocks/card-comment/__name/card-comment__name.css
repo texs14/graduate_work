@@ -9,3 +9,9 @@
     grid-row-start: 2;
     grid-row-end: 3 ;
 }
+
+@media (max-width: 1200px) {
+    .card-comment__name {
+        font-size: 20px;
+    }
+}

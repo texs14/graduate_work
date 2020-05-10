@@ -1,0 +1,25 @@
+.slaider__link-button {
+    font-family: 'Roboto', Heaclvetica, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #1a1b22;
+
+    text-decoration: none;
+
+    border-radius: 100px;
+    border: 1px #1a1b22 solid;
+    
+    height: 56px;
+    width: 100%;
+    
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 420px) {
+    .slaider__link-button {
+        display: flex;
+    }
+}

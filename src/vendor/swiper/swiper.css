@@ -64,9 +64,31 @@
     top: -50%;
     z-index: 999;  }
 
-    @media (max-width: 1090px) {
-        .swiper-button-next,
-        .swiper-button-prev {
-            display: none;
-        }
+@media (max-width: 1200px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
     }
+
+    .swiper-pagination {
+        margin-bottom: 40px;
+    }
+    .swiper-wrapper {
+        position: relative;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .swiper-container {
+        /* width: 300px; */
+    }
+
+    .swiper-pagination {
+        margin-bottom: 112px;
+    }
+
+    .swiper-slide {
+        /* width: 288px !important; */
+    }
+}

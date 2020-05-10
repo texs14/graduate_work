@@ -18,6 +18,11 @@
 @media (max-width: 680px) {
     .menu__item_place_footer {
         margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .menu__item_place_footer:last-child {
+        margin-right: 20px;
         margin-bottom: 40px;
     }
 }

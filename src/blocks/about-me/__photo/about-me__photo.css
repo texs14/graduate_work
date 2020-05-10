@@ -22,10 +22,15 @@
 
 @media (max-width: 680px) {
     .about-me__photo {
+        display: block;
         width: 80%;
         height: 80%;
         margin: auto;
         margin-bottom: 24px;
+    }
+
+    .about-me__photo:nth-child(1) {
+        display: none;
     }
 }
 

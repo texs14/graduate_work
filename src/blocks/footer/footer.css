@@ -11,13 +11,14 @@
 @media (max-width: 870px) {
     .footer {
         height: 64px;
-        margin: 0px 40px;
+        padding: 0px 40px;
     }
 }
 
 @media (max-width: 680px) {
     .footer {
         flex-wrap: wrap;
+        padding-top: 20px;
     }
 
     .footer__menu {
@@ -28,6 +29,7 @@
 
 @media (max-width: 420px) {
     .footer {
-        margin: 32px 16px;
+        margin: 32px auto;
+        padding: 0 16px;
     }
 }

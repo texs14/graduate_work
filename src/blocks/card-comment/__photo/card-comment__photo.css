@@ -7,3 +7,11 @@
     grid-column-start: 1;
     grid-column-end: 2;
 }
+
+
+@media (max-width: 1200px) {
+    .card-comment__photo {
+        height: 48px;
+        width: 48px;
+    }
+}

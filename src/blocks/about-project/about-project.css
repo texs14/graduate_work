@@ -12,7 +12,7 @@
 
 @media (max-width: 1040px) {
     .main__about-project {
-        margin: 48px 40px 50px 40px;
+        margin: 30px 40px 50px 40px;
     }
     .about-project {
         width: fit-content;

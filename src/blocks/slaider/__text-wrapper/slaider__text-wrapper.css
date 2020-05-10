@@ -19,3 +19,9 @@
         margin-bottom: 36px;
     }
 }
+
+@media (max-width: 420px) {
+    .slaider__text-wrapper {
+        margin-bottom: 0;
+    }
+}
