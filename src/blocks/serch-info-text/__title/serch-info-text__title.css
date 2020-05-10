@@ -1,0 +1,22 @@
+.serch-info-text__title {
+    font-family: 'Roboto Slab', Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 46px;
+    margin: 0 0 24px;
+}
+
+@media (max-width: 768px) {
+    
+    .serch-info-text__title {
+        font-size: 32px;
+        line-height: 34px;
+    }
+}
+
+@media (max-width: 450px) {
+    .serch-info-text__title {
+        font-size: 30px;
+        margin: 16px 0;
+    }
+}

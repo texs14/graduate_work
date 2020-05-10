@@ -1,0 +1,11 @@
+@import url(./__circle/preloader__circle.css);
+@import url(./__paragraph/preloader__paragraph.css);
+
+.preloader {
+    max-width: 185px;
+	margin: 0;
+	max-height: 122px;
+    margin: auto;    
+	
+	overflow: hidden;
+}

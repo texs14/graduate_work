@@ -1,0 +1,12 @@
+.table__item-date {
+    font-family: 'Roboto', Heaclvetica, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 80px;
+}
+
+@media (max-width: 450px) {
+    .table__item-date {
+        line-height: 48px;
+    }
+}

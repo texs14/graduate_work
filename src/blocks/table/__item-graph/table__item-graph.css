@@ -1,0 +1,39 @@
+.table__item-graph {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #2f71e5;
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.table__item-graph-1 {
+    width: 15%;
+}
+
+.table__item-graph-2 {
+    width: 18%;
+}
+
+.table__item-graph-3 {
+    width: 11%;
+}
+
+.table__item-graph-4 {
+    width: 38%;
+}
+
+.table__item-graph-5 {
+    width: 45%;
+}
+
+.table__item-graph-6 {
+    width: 83%;
+}
+
+.table__item-graph-7 {
+    width: 34%;
+}

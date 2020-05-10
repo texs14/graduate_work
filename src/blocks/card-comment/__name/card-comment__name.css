@@ -1,0 +1,17 @@
+.card-comment__name { 
+    font-family: 'Roboto Slab', Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    margin: 0;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3 ;
+}
+
+@media (max-width: 1200px) {
+    .card-comment__name {
+        font-size: 20px;
+    }
+}

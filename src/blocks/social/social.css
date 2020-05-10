@@ -1,0 +1,35 @@
+@import url(./__link/social__link.css);
+@import url(./__item/social__item.css);
+
+.social {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 680px) {
+    .social {
+        align-items: flex-start;
+        margin-left: 54%;
+    }
+}
+
+@media (max-width: 600px) {
+    .social {
+        margin-left: 40%;
+    }
+}
+
+@media (max-width: 480px) {
+    .social {
+        margin-left: 69px;
+    }
+}
+
+@media (max-width: 330px) {
+    .social {
+        margin-left: 60px;
+    }
+}

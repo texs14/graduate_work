@@ -1,0 +1,11 @@
+.card-comment__date {
+    color: #b6bcbf;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0 0 16px;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}

@@ -1,0 +1,14 @@
+@import url(./__item/menu__item.css);
+@import url(./__link/menu__link.css);
+@import url(./__link/menu__link_active_dark.css);
+@import url(./__link/menu__link_active_white.css);
+@import url(./__item/_place/menu__item_place_footer.css);
+@import url(./__link/_place/menu__link_place_footer.css);
+.menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}

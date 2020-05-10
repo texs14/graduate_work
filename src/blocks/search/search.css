@@ -1,0 +1,23 @@
+@import url(./__title/search__title.css);
+@import url(./__paragraph/search__paragraph.css);
+.search {
+    width: 608px;
+}
+
+@media (max-width: 768px) {
+    .search {
+        width: 448px;
+    }
+}
+
+@media (max-width: 490px) {
+    .search {
+        width: 85%;
+    }
+}
+
+@media (max-width: 320px) {
+    .search {
+        width: 288px;
+    }
+}

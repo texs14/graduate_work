@@ -1,0 +1,24 @@
+@import url(./__item/bread-crumbs__item.css);
+@import url(./__link/bread-crumbs__link.css);
+.bread-crumbs {
+    list-style: none;
+    padding-left: 104px;
+    display: flex;
+    box-sizing: border-box;
+    max-width: 1449px;
+}
+
+@media (max-width: 768px) {
+    .bread-crumbs {
+        padding-left: 40px;
+    }
+    
+}
+
+@media (max-width: 450px) {
+    .bread-crumbs {
+        padding-left: 16px;
+        display: none;
+    }
+    
+}

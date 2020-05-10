@@ -1,0 +1,17 @@
+@import url(./__title/technologies__title.css);
+@import url(./__list/technologies__list.css);
+@import url(./__item/technologies__item.css);
+.technologies {
+    height: 334px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f5f6f7;
+}
+
+@media (max-width: 1090px) {
+    .technologies {
+        flex-flow: column;
+        height: fit-content;
+        justify-content: start;
+    }
+}

@@ -1,0 +1,39 @@
+@import url(./__text-wrapper/about-me__text-wrapper.css);
+@import url(./__photo/about-me__photo.css);
+@import url(./__title/about-me__title.css);
+@import url(./__paragraph/about-me__paragraph.css);
+
+.about-me {
+    display: flex;
+    max-width: 1440px;
+    height: 624px;
+    box-sizing: border-box;
+    padding: 80px 15% 80px 104px;
+    margin: auto;
+}
+
+@media (max-width: 1200px) {
+    .about-me {
+        padding: 80px 104px;
+        height: fit-content;
+    }
+}
+
+@media (max-width: 950px) {
+    .about-me {
+        padding: 80px ;
+    }
+}
+
+@media (max-width: 820px) {
+    .about-me {
+        padding: 40px 40px 48px;
+    }
+}
+
+@media (max-width: 680px) {
+    .about-me {
+        padding:  32px 16px 69px 16px;
+        flex-flow: column;
+    }
+}

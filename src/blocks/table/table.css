@@ -1,0 +1,12 @@
+@import url(./__title/table__title.css);
+@import url(./__list-scales/table__list-scales.css);
+@import url(./__list-date/table__list-date.css);
+@import url(./__item-scale/table__item-scale.css);
+@import url(./__item-date/table__item-date.css);
+@import url(./__item-graph/table__item-graph.css);
+@import url(./__list-graphs/table__list-graphs.css);
+.table {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 80px 1fr;
+}

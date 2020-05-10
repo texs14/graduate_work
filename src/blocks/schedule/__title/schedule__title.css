@@ -1,0 +1,22 @@
+.schedule__title {
+    font-family: 'Roboto Slab', Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    margin: 0 0 48px 104px;
+}
+
+@media (max-width: 768px) {
+    
+    .schedule__title {
+        margin: 0 0 48px 40px;
+
+    }
+}
+
+@media (max-width: 450px) {
+    .schedule__title {
+        font-size: 22px;
+        margin: 0 0 16px 16px;
+    }
+}

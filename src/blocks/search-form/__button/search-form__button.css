@@ -1,0 +1,46 @@
+.search-form__button {
+    background: #2f71e5;
+    box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+    border-radius: 100px;
+    border: none;
+    width: 168px;
+    height: 64px;
+    font-family: 'Roboto', Helvetica, sans-serif, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 6px;
+}
+
+.search-form__button:hover {
+    background: #347eff;
+}
+
+.search-form__button:active {
+    background: #2a65cc;
+}
+
+@media (max-width: 768px) {
+    .search-form__button {
+        height: 56px;
+        width: 160px;
+    }
+}
+
+@media (max-width: 450px) {
+    .search-form__button {
+        position: static;
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .search-form__button {
+        position: static;
+        width: 100%;
+    }
+}

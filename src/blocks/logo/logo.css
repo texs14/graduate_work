@@ -1,0 +1,16 @@
+@import url(./__link/logo__link.css);
+@import url(./__link/_theme/logo__link_theme_dark.css);
+@import url(./__link/_theme/logo__link_theme_white.css);
+.logo {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Roboto Slab', Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    padding-top: 6px;
+    font-size: 20px;
+    line-height: 24px;
+}

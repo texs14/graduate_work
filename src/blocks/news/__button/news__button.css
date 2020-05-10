@@ -1,0 +1,23 @@
+.news__button {
+    display: block;
+    padding: 18px 84px 21px 84px;
+    background-color: #fff;
+    border: none;
+    border-radius: 80px;
+    margin: 64px auto 0 auto;
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.news__button:hover {
+    background: #e8e8e8;
+    transition: .3s;
+}
+
+@media (max-width: 340px) {
+    .news__button {
+        padding: 15px 75px 17px 75px;
+    }
+}

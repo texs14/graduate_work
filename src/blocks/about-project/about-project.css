@@ -1,0 +1,26 @@
+@import url(./__title/about-project__title.css);
+@import url(./__paragraph/about-project__paragraph.css);
+.about-project {
+    width: 815px;
+}
+
+.main__about-project {
+    margin-top: 80px;
+    margin-left: 104px;
+    margin-bottom: 94px;
+}
+
+@media (max-width: 1040px) {
+    .main__about-project {
+        margin: 30px 40px 50px 40px;
+    }
+    .about-project {
+        width: fit-content;
+    }
+}
+
+@media (max-width: 420px) {
+    .main__about-project {
+        margin: 16px 16px 20px 16px;
+    }
+}

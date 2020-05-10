@@ -1,0 +1,15 @@
+.menu__item {
+    margin-right: 34px;
+    height: 100%;
+}
+
+.menu__item:last-child {
+    margin-right: 0;
+}
+
+
+@media (max-width: 450px) {
+    .menu__item {
+        margin-right: 11px;
+    }
+}
