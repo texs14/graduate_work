@@ -7,7 +7,7 @@
     <meta name="description" content="Сайт с поиском новостей за последнюю неделю">
     <meta name="author" content="Михайлов Руслан">
     <title>Дипломная работа</title>
-    <link rel="stylesheet" href="index/index.658a71fd94f4f5d2ae34.css">
+    <link rel="stylesheet" href="index/index.8e7872ca5b87edb74a02.css">
     <link rel="icon" type="image/jpg"  href="./images/favicon.jpg">
 </head>
 
@@ -24,64 +24,35 @@
             <h2 class="search__title">Что в мире творится?</h2>
             <p class="search__paragraph"> Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
             <form action="http://httpbin.org/post" method="post" class="search-form search__search-form">
-                <input type="text" class="search-form__input" name="search" placeholder="Введите тему новости" minlength="2" required>
+                <input type="text" class="search-form__input " name="search" placeholder="Введите тему новости">
                 <button class="search-form__button" type="submit">Искать</button>
+                <span class="error-massege"></span>
             </form>
         </section>
     </header>
     <main class="main">
-        <section class="search-result">
-            <div class="preloader" style="display: none;">
+        <section class="search-result" style="display: none;">
+            <div class="preloader">
                 <i class="preloader__circle"></i>
                 <p class="preloader__paragraph">Идет поиск новостей...</p>
             </div>
             <div class="not-found search-result__not-found" style="display: none;">
-                <img src="./images/not-found_v1.png" alt="грустная рожица, она грустит из-за того, что ничего не нашлось(((">
+                <img src="./images/not-found_v1.png" alt="грустная рожица, она грустит из-за того, что ничего не нашлось(((" class="not-found__image">
                 <h2 class="not-found__title">Ничего не найдено</h2>
                 <p class="not-found__paragraph">К сожалению по вашему запросу ничего не найдено.</p>
             </div>
-            <div class="news search-result__news">
+            <div class="news search-result__news" style="display: none;">
 
                 <div class="news__text-wrapper">
                     <h2 class="news__title">Результаты поиска</h2>
                     <a href="./analytics.html" class="news__link-analitics">Посмотреть аналитику &Tab; &Tab;</a>
                 </div>
+                <div class="news__list-container">
+                    <ul class="news__list"> 
+                        
+                    </ul>
 
-                <ul class="news__list">
-                    <li class="news__card">
-                        <img src="./images/image_08.jpg" alt="картинка статьи" class="news__card-image">
-                        <div class="news__news-text-wrapper">
-                            <p class="news__card-date">2 августа, 2019</p>
-                            <h2 class="news__card-title">Национальное достояние – парки</h2>
-                            <p class="news__card-paragraph">В 2016 году Америка отмечала важный юбилей:
-                                сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                                 где и сегодня каждый может приобщиться к природе.</p>
-                            <address class="news__card-newspaper">Лента.ру</address>
-                        </div>
-                    </li>
-                    <li class="news__card">
-                        <img src="./images/image_08.jpg" alt="картинка статьи" class="news__card-image">
-                        <div class="news__news-text-wrapper">
-                            <p class="news__card-date">2 августа, 2019</p>
-                            <h2 class="news__card-title">Национальное достояние – парки</h2>
-                            <p class="news__card-paragraph">В 2016 году Америка отмечала важный юбилей:
-                                сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                                 где и сегодня каждый может приобщиться к природе.</p>
-                            <address class="news__card-newspaper">Лента.ру</address>
-                        </div>
-                    </li>
-                    <li class="news__card">
-                        <img src="./images/image_08.jpg" alt="картинка статьи" class="news__card-image">
-                        <div class="news__news-text-wrapper">
-                            <p class="news__card-date">2 августа, 2019</p>
-                            <h2 class="news__card-title">Национальное достояние – парки</h2>
-                            <p class="news__card-paragraph">В 2016 году Америка отмечала важный юбилей:
-                                сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                                 где и сегодня каждый может приобщиться к природе.</p>
-                            <address class="news__card-newspaper">Лента.ру</address>
-                        </div>
-                    </li>
-                </ul>
+                </div>
 
                 <!-- <ul class="news__list">
                     <li class="news__card">
@@ -123,7 +94,10 @@
             </div>
         </section>
         <section class="about-me">
-            <img src="./images/W-xWCeWyze8.jpg" alt="фото автора" class="about-me__photo">
+            <picture>
+                <source srcset="./images/W-xWCeWyze8.jpg" media="(min-width: 500px)" class="about-me__photo">
+                <img src="./images/W-xWCeWyze8-mini.jpg" alt="фото" class="about-me__photo">
+            </picture>
             <div class="about-me__text-wrapper">
                 <h2 class="about-me__title">Об авторе</h2>
                 <p class="about-me__paragraph">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
@@ -149,7 +123,7 @@
             </li>
         </ul>
     </footer>
-    <script src="index/index.048dd97f94bbfcb260a5.js"></script>
+    <script src="index/index.962c364cf089c886b7fc.js"></script>
 </body>
 
 </html>
