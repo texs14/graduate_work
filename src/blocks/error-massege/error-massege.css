@@ -1,0 +1,39 @@
+.error-massege {
+    position: absolute;
+    display: block;
+    background: #fff;
+    border-radius: 0 0 45px 45px;
+    width: fit-content;
+    padding-left: 20px;
+    color: #cc2a2a;
+    margin: auto;
+    left: 15%;
+    top: 0%;
+    z-index: 0;
+    transition: .3s;
+}
+
+@media (max-width: 768px) {
+    .error-massege {
+        left: 10%;
+    }
+}
+
+@media (max-width: 498px) {
+    .error-massege {
+        width: 65%;
+        text-align: center;
+        padding: 0 20px;
+
+    }
+}
+
+@media (max-width: 450px) {
+    .error-massege {
+        border-radius: 45px 45px 0 0;
+        width: 65%;
+        left: 10%;
+        font-size: 14px;
+        top: 0%;
+    }
+}

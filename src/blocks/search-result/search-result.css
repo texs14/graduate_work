@@ -3,9 +3,11 @@
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    min-height: 282px;
+    min-height: fit-content;
     background-color: #f5f6f7;
     width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .search-result__not-found {
@@ -14,7 +16,7 @@
 }
 
 .search-result__news {
-    margin: 80px 104px;
+    margin: 0px 104px;
 }
 
 @media (max-width: 870px) {

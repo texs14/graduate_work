@@ -1,8 +1,12 @@
+import Swiper from '../../../node_modules/swiper/js/swiper';
+
 export var mySwiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
-
+    slidesPerView: 3,
+    spaceBetween: 30,
+    freeMode: false,
     // If we need pagination
     pagination: {
         el: '.swiper-pagination',

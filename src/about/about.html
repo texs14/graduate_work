@@ -7,7 +7,6 @@
     <meta name="description" content="Сайт с поиском новостей за последнюю неделю">
     <meta name="author" content="Михайлов Руслан">
     <title>О проекте</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.about.css %>">
     <link rel="icon" type="image/jpg"  href="<%=require('../images/favicon.jpg').default%>">
 </head>
@@ -61,61 +60,18 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide">
-                    <div class="card-comment">
-                        <span class="card-comment__date">14 августа, 2019</span>
-                        <img src="<%=require('../images/W-xWCeWyze8.jpg').default%>" alt="аватар с Githab" class="card-comment__photo">
-                        <a href="mailto:anton@yandex.ru" class="card-comment__email">anton@yandex.ru</a>
-                        <p class="card-comment__name">Антон Долинин</p>
-                        <p class="card-comment__paragraph">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.
-                        </p>
+                <template id="cardCommitSlaide">
+                    <div class="swiper-slide">
+                        <div class="card-comment">
+                            <span class="card-comment__date">14 августа, 2019</span>
+                            <img src="<%=require('../images/W-xWCeWyze8.jpg').default%>" alt="аватар с Githab" class="card-comment__photo">
+                            <a href="mailto:anton@yandex.ru" class="card-comment__email">anton@yandex.ru</a>
+                            <p class="card-comment__name">Антон Долинин</p>
+                            <p class="card-comment__paragraph">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card-comment">
-                        <span class="card-comment__date">14 августа, 2019</span>
-                        <img src="<%=require('../images/W-xWCeWyze8.jpg').default%>" alt="аватар с Githab" class="card-comment__photo">
-                        <p class="card-comment__name">Антон Долинин</p>
-                        <a href="mailto:anton@yandex.ru" class="card-comment__email">anton@yandex.ru</a>
-                        <p class="card-comment__paragraph">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card-comment">
-                        <span class="card-comment__date">14 августа, 2019</span>
-                        <img src="<%=require('../images/W-xWCeWyze8.jpg').default%>" alt="аватар с Githab" class="card-comment__photo">
-                        <p class="card-comment__name">Антон Долинин</p>
-                        <a href="mailto:anton@yandex.ru" class="card-comment__email">anton@yandex.ru</a>
-                        <p class="card-comment__paragraph">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card-comment">
-                        <span class="card-comment__date">14 августа, 2019</span>
-                        <img src="<%=require('../images/W-xWCeWyze8.jpg').default%>" alt="аватар с Githab" class="card-comment__photo">
-                        <p class="card-comment__name">Антон Долинин</p>
-                        <a href="mailto:anton@yandex.ru" class="card-comment__email">anton@yandex.ru</a>
-                        <p class="card-comment__paragraph">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card-comment">
-                        <span class="card-comment__date">14 августа, 2019</span>
-                        <img src="<%=require('../images/W-xWCeWyze8.jpg').default%>" alt="аватар с Githab" class="card-comment__photo">
-                        <p class="card-comment__name">Антон Долинин</p>
-                        <a href="mailto:anton@yandex.ru" class="card-comment__email">anton@yandex.ru</a>
-                        <p class="card-comment__paragraph">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card-comment">
-                        <span class="card-comment__date">14 августа, 2019</span>
-                        <img src="<%=require('../images/W-xWCeWyze8.jpg').default%>" alt="аватар с Githab" class="card-comment__photo">
-                        <p class="card-comment__name">Антон Долинин</p>
-                        <a href="mailto:anton@yandex.ru" class="card-comment__email">anton@yandex.ru</a>
-                        <p class="card-comment__paragraph">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </div>
-                </div>
+                </template>
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
@@ -145,7 +101,6 @@
             </li>
         </ul>
     </footer>
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
 </body>
 

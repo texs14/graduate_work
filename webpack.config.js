@@ -22,11 +22,6 @@ module.exports = {
     module: {
         rules: [{
                 test: /\.css$/i,
-                // use: [
-                //     (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-                //     'css-loader',
-                //     'postcss-loader'
-                // ]
                 use: [ 
                     isDev ? 'style-loader' : {
                         loader: MiniCssExtractPlugin.loader,

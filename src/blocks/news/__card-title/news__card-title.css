@@ -4,6 +4,12 @@
     font-weight: normal;
     font-size: 26px;
     line-height: 30px;
+    /* text-overflow: ellipsis; */
+    overflow: hidden;
+    height: 90px;
+    display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
 }
 
 @media (max-width: 870px) {
@@ -11,5 +17,6 @@
         font-size: 22px;
         line-height: 24px;
         margin-bottom: 10px;
+        height: 80px;
     }
 }
