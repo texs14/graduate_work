@@ -1,5 +1,5 @@
 import CommitCard from './CommitCard';
-import {mySwiper} from '../../vendor/swiper/swiper'; 
+import { mySwiper } from '../../vendor/swiper/swiper';
 
 export default class CommitCardList extends CommitCard {
     constructor(dataStorage, gitApi) {
@@ -9,7 +9,7 @@ export default class CommitCardList extends CommitCard {
     }
 
     renderSlaider() {
-            this._gitApi.getCommits()
+        this._gitApi.getCommits()
             .then(commits => {
                 this._dataStorage.saveGitComment(commits);
                 return commits;
@@ -17,12 +17,12 @@ export default class CommitCardList extends CommitCard {
             .then(commits => {
                 commits.forEach(commit => {
                     mySwiper.appendSlide(
-                    this.createCard(
-                        commit.commit.author.date,
-                        commit.author.avatar_url,
-                        commit.commit.author.email,
-                        commit.commit.author.name,
-                        commit.commit.message)
+                        this.createCard(
+                            commit.commit.author.date,
+                            commit.author.avatar_url,
+                            commit.commit.author.email,
+                            commit.commit.author.name,
+                            commit.commit.message)
                     );
                 });
             }); 

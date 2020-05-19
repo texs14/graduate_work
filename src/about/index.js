@@ -9,5 +9,5 @@ let git = new GitApi();
 let commitCardList = new CommitCardList(dataStorage, git);
 let commitCard = new CommitCard();
 commitCardList.renderSlaider();
-import {mySwiper} from '../vendor/swiper/swiper';
+import { mySwiper } from '../vendor/swiper/swiper';
 mySwiper.update();

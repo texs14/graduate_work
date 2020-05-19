@@ -1,9 +1,9 @@
 export default class SearchInput {
-    constructor(cardsList, dataStorage, newsApi, reqest, words) {
+    constructor(cardsList, dataStorage, newsApi, request, words) {
         this.cardsList = cardsList;
         this._dataStorage = dataStorage;
         this._newsApi = newsApi;
-        this.reqest = reqest;
+        this.request = request;
         this.words = words;
     }
 
@@ -11,11 +11,11 @@ export default class SearchInput {
         let errirMessage = document.querySelector('.error-massege');
         let input = document.querySelector('.search-form__input');
 
-        if(this.request.length <= 1) {
+        if (this.request.length <= 1) {
             errirMessage.textContent = this.words.ru.minlength;
             errirMessage.style.boxShadow = '0px 0px 20px 10px #cc2a2a';
             if (window.innerWidth <= 450) {
-                errirMessage.style.top = '-25%';                
+                errirMessage.style.top = '-25%';
             } else {
                 errirMessage.style.top = '100%';
             }
@@ -45,26 +45,28 @@ export default class SearchInput {
             notFound.style.display = 'none';
             searchResult.style.display = 'block';
             preloader.style.display = 'block';
-            this._newsApi.getNews(this.reqest.value)
-            .then(res => {
-                return res.articles;
-            })
-            .then(news => {
-                this._dataStorage.saveNews(news);
-                return news;
-            })
-            .then(news => {
-                if(news.length != 0){
-                    this.cardsList.renderCards(news);
-                    newsBlock.style.display = 'block';
-                } else notFound.style.display = 'flex';
-            })
-            .catch(err => {
-                console.log(err);
-            })
-            .finally(() => {
-                preloader.style.display = 'none';
-            });
-        });         
+            this._newsApi.getNews(this.request.value)
+                .then(res => {
+                    this._dataStorage.saveNews(res);
+                    return res.articles;
+                })
+                .then(news => {
+                    this._dataStorage.saveRequest(this.request.value)
+                    return news;
+                })
+                .then(news => {
+                    if (news.length != 0) {
+                        console.log(news);
+                        this.cardsList.renderCards(news);
+                        newsBlock.style.display = 'block';
+                    } else notFound.style.display = 'flex';
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+                .finally(() => {
+                    preloader.style.display = 'none';
+                });
+        });
     }
 }

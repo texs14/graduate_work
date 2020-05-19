@@ -5,9 +5,8 @@ export default class NewsApi {
 
     getNews(reqest) {
         const SEVEN_DAYS = 7 * 24 * 3600 * 1000;
-    let date = new Date();  
         return fetch(
-            `https://newsapi.org/v2/everything?qInTitle=+"${reqest}"&from=${new Date(date - SEVEN_DAYS).toISOString()}&to=${new Date().toISOString()}&sortBy=publishedAt&language=ru&pageSize=100&apiKey=${this._token}`
+            `https://newsapi.org/v2/everything?qInTitle=+"${reqest}"&from=${new Date(new Date() - SEVEN_DAYS).toISOString()}&to=${new Date().toISOString()}&language=ru&pageSize=100&apiKey=${this._token}`
             )
         .then((res) => {
             if (res.ok) return res.json();
