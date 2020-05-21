@@ -34,7 +34,7 @@ document.querySelector('#mentionsInTitle').textContent = statistics.serch(data.g
 
 // for( let i = 0; i < 7; i++) {
 //     let regEx = new RegExp(`^.{8}${arrDays[i]}`, '');
-    
+
 //     let arr = data.getNews().articles.filter((item) => {
 //         return item.publishedAt.match(regEx) != null;
 //     });
@@ -50,12 +50,12 @@ document.querySelector('#mentionsInTitle').textContent = statistics.serch(data.g
 // });
 
 
-let a = document.querySelectorAll('.table__item-date');
-let b = document.querySelectorAll('.table__item-graph');
+let tableDate = document.querySelectorAll('.table__item-date');
+let tableGraphs = document.querySelectorAll('.table__item-graph');
+let tableScales = document.querySelectorAll('.table__item-scale');
 
-
-statistics.displayStatistics(a);
-statistics.displayGraphs(b);
+statistics.displayStatistics(tableDate);
+statistics.displayGraphs(tableGraphs, tableScales);
 // console.log(a);
 
 // console.log(arrDays);
