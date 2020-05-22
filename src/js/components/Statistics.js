@@ -5,10 +5,6 @@ export default class Statistics {
         this._dataStorage = dataStorage;
     }
 
-    getRequestHeaders() {
-
-    }
-
     serch(arr, request) {
         let regEx = new RegExp(request, 'ig');
         arr.forEach(({ title }) => {
@@ -22,9 +18,8 @@ export default class Statistics {
 
 
     /***
-     * Метод возвращает отcортированный массив новостей, 
+     * @return {Array} возвращает отcортированный массив новостей, 
      * исключая новости без указания двты
-     * @return {Array}
      */
     _sortByDay() {
         let arrDays = this._getDatesArr();
@@ -46,8 +41,7 @@ export default class Statistics {
 
 
     /**
-     * Метод возвращает массив дней с сегодняшнего по - 7 дней
-     * @return{Array}
+     * @return{Array} озвращает массив дней с сегодняшнего по - 6 дней
      */
     _getDatesArr() {
         let arrDays = [];
@@ -59,6 +53,9 @@ export default class Statistics {
         return arrDays;
     }
 
+    /**
+     * @return {Array} возвращает массив дней недели от сегоднешнего до - 6 дней
+    */
     _getWeekDays() {
         let arrWeekDays = [];
         for (let i = 0; i < 7; i++) {
@@ -89,13 +86,15 @@ export default class Statistics {
                     break;
             }
         }
-        // console.log(arrWeekDays);
         return arrWeekDays;
     }
 
+    /**
+     * @param {Array} arr масив новостей
+     * @param {String} request запрос для поиска
+     * @return {Number} возвращает сумму запроса повторений в заголовке и описании новостей
+    */
     _serchAll(arr, request) {
-        // console.log(arr);
-        // console.log(request);
         this._amountWordAall = 0;
         let regEx = new RegExp(request, 'ig');
         arr.forEach(({ title, description }) => {
@@ -103,9 +102,8 @@ export default class Statistics {
             let wordsDescription = description != null && description.match(regEx) != null && description.match(regEx).length != null ? description.match(regEx).length : 0;
             this._amountWordAall += wordsTitle + wordsDescription;
         });
-        // console.log(this._amountWordAall);
-        let sum = this._amountWordAall;
-        return sum;
+        return this._amountWordAall;
+         
     }
 
     displayStatistics(arrElems) {
@@ -115,21 +113,18 @@ export default class Statistics {
         arrElems.forEach((el, index) => {
             el.textContent = `${arrDays[index]}, ${arrWeekDays[index]}`;
         });
-        // console.log(arrDays);
-        // console.log(arrWeekDays);
 
     }
 
     displayGraphs(arrGraphs, arrScalse = [0]) {
         let sortByDay = this._sortByDay().reverse();
         let request = this._dataStorage.getRequest().replace(/"/g, '');
-        // console.log(sortByDay);
 
         let arrSerchResult = sortByDay.map((el, index) => {
             return this._serchAll(sortByDay[index], request);
         });
 
-        let newArrSerchResult = arrSerchResult.map(el => { return el });
+        let newArrSerchResult = arrSerchResult.slice();
 
         let coefficient = 1;
         let stepScales = 25;
@@ -155,16 +150,12 @@ export default class Statistics {
 
         arrGraphs.forEach((el, index) => {
             let searchResult = this._serchAll(sortByDay[index], request);
-            // console.log(arrScalse[index]);   
             if (index < 5) arrScalse[index].textContent = index * stepScales;
             el.textContent = searchResult;
             el.style.width = `${searchResult * coefficient}%`
-                // console.log(this._dataStorage.getRequest().replace(/"/g, ''));
-                // console.log(searchResult);
-                // console.log(sortByDay[index]);
+
         });
-        // console.log(newArrSerchResult);
-        // console.log(arrSerchResult);
+
     }
 
 }

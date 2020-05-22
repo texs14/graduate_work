@@ -13,7 +13,8 @@ export default class NewsApi {
             return Promise.reject(res.status);
         })
         .catch((err) => {
-            console.log(err);
+            alert('Ответ от сервера пришёл с ошибкой((');
+
         });
     }
 }

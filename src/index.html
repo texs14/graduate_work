@@ -24,8 +24,8 @@
             <h2 class="search__title">Что в мире творится?</h2>
             <p class="search__paragraph"> Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
             <form action="http://httpbin.org/post" method="post" class="search-form search__search-form">
-                <input type="text" class="search-form__input " name="search" placeholder="Введите тему новости">
-                <button class="search-form__button" type="submit">Искать</button>
+                <input type="text" class="search-form__input" name="search" placeholder="Введите тему новости" required minlength="2">
+                <button class="search-form__button" type="submit" disabled>Искать</button>
                 <span class="error-massege"></span>
             </form>
         </section>
