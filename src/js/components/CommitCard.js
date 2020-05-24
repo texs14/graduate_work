@@ -1,13 +1,10 @@
 import dateTransform from '../utils/dateTransform';
 export default class CommitCard {
-    constructor() {
-
-    }
+    constructor() {}
 
     createCard(date, imgUrl, email, name, paragraph) {
-        console.log(date);
 
-        const templateCard = 
+        let templateCard =
             `<div class="swiper-slide">
                 <div class="card-comment">
                     <span class="card-comment__date">${dateTransform(date)}</span>

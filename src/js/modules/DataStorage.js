@@ -3,7 +3,6 @@ export default class DataStorage {
 
     getNews() {
         let news = JSON.parse(localStorage.news);
-        // console.log(news);
         return news;
     }
 
@@ -26,7 +25,6 @@ export default class DataStorage {
     }
 
     saveRequest(request) {
-        // console.log(request);
         localStorage.setItem('request', JSON.stringify(request.replace(/^\s*|\s*$/g, '')));
     }
 }

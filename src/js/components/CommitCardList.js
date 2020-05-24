@@ -25,6 +25,9 @@ export default class CommitCardList extends CommitCard {
                             commit.commit.message)
                     );
                 });
-            }); 
+            })
+            .catch(err => {
+                alert(err);
+            });
     }
 }

@@ -1,19 +1,19 @@
 export default class SearchInput {
-    constructor(cardsList, dataStorage, newsApi, request, words) {
-        this.cardsList = cardsList;
+    constructor(cardsList, dataStorage, newsApi, request, WORDS) {
+        this._cardsList = cardsList;
         this._dataStorage = dataStorage;
         this._newsApi = newsApi;
-        this.request = request;
-        this.words = words;
+        this._request = request;
+        this._WORDS = WORDS;
     }
-    
+
     _validation() {
         let errirMessage = document.querySelector('.error-massege');
         let input = document.querySelector('.search-form__input');
         const regEx = /[^\wа-яА-ЯёЁ\s_]/;
-        
-        if (regEx.test(this.request.value)) {
-            errirMessage.textContent = this.words.ru.minlength;
+
+        if (regEx.test(this._request.value)) {
+            errirMessage.textContent = this._WORDS.RU.ERROR;
             errirMessage.style.boxShadow = '0px 0px 20px 10px #cc2a2a';
             if (window.innerWidth <= 450) {
                 errirMessage.style.top = '-25%';
@@ -32,38 +32,38 @@ export default class SearchInput {
             return true;
         }
     }
-    
+
     submit() {
         const searchResult = document.querySelector('.search-result');
         const newsBlock = document.querySelector('.news');
         const preloader = document.querySelector('.preloader');
         const notFound = document.querySelector('.not-found');
         const button = document.querySelector('.search-form__button');
-        
+
         document.forms[0].addEventListener('submit', (event) => {
             event.preventDefault();
             if (this._validation()) {
 
                 button.setAttribute('disabled', 'disabled');
-                this.cardsList.clearList();
+                this._cardsList.clearList();
                 newsBlock.style.display = 'none';
                 notFound.style.display = 'none';
                 searchResult.style.display = 'block';
                 preloader.style.display = 'block';
-                this._newsApi.getNews(this.request)
+                this._newsApi.getNews(this._request)
                     .then(res => {
                         this._dataStorage.saveNews(res);
                         console.log(res.articles);
                         return res.articles;
                     })
                     .then(news => {
-                        this._dataStorage.saveRequest(this.request);
+                        this._dataStorage.saveRequest(this._request);
                         return news;
                     })
                     .then(news => {
                         if (news.length != 0) {
                             console.log(news);
-                            this.cardsList.renderCards(news);
+                            this._cardsList.renderCards(news);
                             newsBlock.style.display = 'block';
                         } else notFound.style.display = 'flex';
                     })
@@ -75,9 +75,9 @@ export default class SearchInput {
                         button.removeAttribute('disabled');
                     });
             }
-                
-                
-            });
-            
-        }
+
+
+        });
+
     }
+}
