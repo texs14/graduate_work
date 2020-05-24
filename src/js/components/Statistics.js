@@ -27,14 +27,11 @@ export default class Statistics {
         for (let i = 0; i < 7; i++) {
             let regEx = new RegExp(`^.{8}${arrDays[i]}`, ''); //создаётся регулярноее выражение выбирающее дату
 
-            console.log(this._dataStorage.getNews().articles);
-            console.log(regEx);
             let arr = this._dataStorage.getNews().articles.filter((item) => {
                 return item.publishedAt.match(regEx) != null;
             });
             sortArrByDay[i] = arr;
         }
-        console.log(sortArrByDay);
 
         return sortArrByDay;
     }
@@ -131,7 +128,7 @@ export default class Statistics {
 
         newArrSerchResult.sort((a, b) => {
             return b - a;
-        })
+        });
 
         switch (true) {
             case (newArrSerchResult[0] > 1000):

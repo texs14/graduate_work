@@ -12,14 +12,10 @@ let dataStorage = new DataStorage();
 let newsListCards = new NewsCardList(CARD_LIST_CONTAINER);
 let input = new SearchInput(newsListCards, dataStorage, newsApi, INPUT_SEARCH, WORDS);
 
-
+input.validation();
 input.submit();
 
 NEW_BUTTON.addEventListener('click', (event) => {
     newsListCards.renderCards(dataStorage.getNews().articles);
 });
 
-document.querySelector('.search-form__input').addEventListener('input', (e) => {
-    if (e.target.value.length > 2) document.querySelector('.search-form__button').removeAttribute('disabled');
-    else document.querySelector('.search-form__button').setAttribute('disabled', 'disabled');
-});

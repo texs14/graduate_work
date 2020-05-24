@@ -1,4 +1,6 @@
-export default class SearchInput {
+import {SEARCH_RESULT, NEWS_BLOCK, PRELOAD, NOT_FOUND, BUTTON, ERROR_MESSAGE, INPUT, REG_EX} from '../constants/constants';
+
+export default class SearchINPUT {
     constructor(cardsList, dataStorage, newsApi, request, WORDS) {
         this._cardsList = cardsList;
         this._dataStorage = dataStorage;
@@ -7,53 +9,49 @@ export default class SearchInput {
         this._WORDS = WORDS;
     }
 
-    _validation() {
-        let errirMessage = document.querySelector('.error-massege');
-        let input = document.querySelector('.search-form__input');
-        const regEx = /[^\wа-яА-ЯёЁ\s_]/;
+    validation() {
+        document.querySelector('.search-form__input').addEventListener('input', (e) => {
+            if (e.target.value.length > 1) document.querySelector('.search-form__button').removeAttribute('disabled');
+            else document.querySelector('.search-form__button').setAttribute('disabled', 'disabled');
+        });
 
-        if (regEx.test(this._request.value)) {
-            errirMessage.textContent = this._WORDS.RU.ERROR;
-            errirMessage.style.boxShadow = '0px 0px 20px 10px #cc2a2a';
+        if (REG_EX.test(this._request.value)) {
+            ERROR_MESSAGE.textContent = this._WORDS.RU.ERROR;
+            ERROR_MESSAGE.style.boxShadow = '0px 0px 20px 10px #cc2a2a';
             if (window.innerWidth <= 450) {
-                errirMessage.style.top = '-25%';
+                ERROR_MESSAGE.style.top = '-25%';
             } else {
-                errirMessage.style.top = '100%';
+                ERROR_MESSAGE.style.top = '100%';
             }
-            input.classList.add('search-form__input_error');
+            INPUT.classList.add('search-form__input_error');
             return false;
         } else {
-            errirMessage.style.top = '0%';
-            errirMessage.style.boxShadow = 'none';
+            ERROR_MESSAGE.style.top = '0%';
+            ERROR_MESSAGE.style.boxShadow = 'none';
             setTimeout(() => {
-                errirMessage.textContent = '';
+                ERROR_MESSAGE.textContent = '';
             }, 300);
-            input.classList.remove('search-form__input_error');
+            INPUT.classList.remove('search-form__input_error');
             return true;
         }
     }
 
     submit() {
-        const searchResult = document.querySelector('.search-result');
-        const newsBlock = document.querySelector('.news');
-        const preloader = document.querySelector('.preloader');
-        const notFound = document.querySelector('.not-found');
-        const button = document.querySelector('.search-form__button');
 
         document.forms[0].addEventListener('submit', (event) => {
             event.preventDefault();
-            if (this._validation()) {
+            if (this.validation()) {
 
-                button.setAttribute('disabled', 'disabled');
+                BUTTON.setAttribute('disabled', 'disabled');
                 this._cardsList.clearList();
-                newsBlock.style.display = 'none';
-                notFound.style.display = 'none';
-                searchResult.style.display = 'block';
-                preloader.style.display = 'block';
-                this._newsApi.getNews(this._request)
+                NEWS_BLOCK.style.display = 'none';
+                NOT_FOUND.style.display = 'none';
+                SEARCH_RESULT.style.display = 'block';
+                PRELOAD.style.display = 'block';
+                this._newsApi.getNews(this._request.value)
                     .then(res => {
                         this._dataStorage.saveNews(res);
-                        console.log(res.articles);
+                        console.log(res);
                         return res.articles;
                     })
                     .then(news => {
@@ -64,20 +62,18 @@ export default class SearchInput {
                         if (news.length != 0) {
                             console.log(news);
                             this._cardsList.renderCards(news);
-                            newsBlock.style.display = 'block';
-                        } else notFound.style.display = 'flex';
+                            NEWS_BLOCK.style.display = 'block';
+                        } else NOT_FOUND.style.display = 'flex';
                     })
                     .catch(err => {
+                        console.log(err);
                         alert('Что-то пошло не так...');
                     })
                     .finally(() => {
-                        preloader.style.display = 'none';
-                        button.removeAttribute('disabled');
+                        PRELOAD.style.display = 'none';
+                        BUTTON.removeAttribute('disabled');
                     });
             }
-
-
         });
-
     }
 }

@@ -25,6 +25,6 @@ export default class DataStorage {
     }
 
     saveRequest(request) {
-        localStorage.setItem('request', JSON.stringify(request.replace(/^\s*|\s*$/g, '')));
+        localStorage.setItem('request', JSON.stringify(request.value.replace(/^\s*|\s*$/g, '')));
     }
 }
