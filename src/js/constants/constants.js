@@ -24,6 +24,7 @@ const NEWS_BLOCK = document.querySelector('.news');
 const PRELOAD = document.querySelector('.preloader');
 const NOT_FOUND = document.querySelector('.not-found');
 const BUTTON = document.querySelector('.search-form__button');
+const SEARCH_ERROR_MASSEGE = document.querySelector('.serch-result__error-massege');
 
 
 // элементы для валидации
@@ -32,6 +33,9 @@ const INPUT = document.querySelector('.search-form__input');
 
 // регулярное выражение для валидации
 const REG_EX = /[^\wа-яА-ЯёЁ\s_]/;
+
+// прокси, посути не нужен, но пусть на всякий туту полежит
+const PROXY = 'https://cors-anywhere.herokuapp.com/';
 
 export {
     TOKEN,
@@ -50,6 +54,8 @@ export {
     BUTTON,
     ERROR_MESSAGE,
     INPUT,
-    REG_EX
+    REG_EX,
+    SEARCH_ERROR_MASSEGE,
+    PROXY
     
 };

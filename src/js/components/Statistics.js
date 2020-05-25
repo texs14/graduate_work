@@ -149,7 +149,7 @@ export default class Statistics {
             let searchResult = this._serchAll(sortByDay[index], request);
             if (index < 5) arrScalse[index].textContent = index * stepScales;
             el.textContent = searchResult;
-            el.style.width = `${searchResult * coefficient}%`
+            el.style.width = `${searchResult * coefficient}%`;
 
         });
 

@@ -1,4 +1,4 @@
-import {SEARCH_RESULT, NEWS_BLOCK, PRELOAD, NOT_FOUND, BUTTON, ERROR_MESSAGE, INPUT, REG_EX} from '../constants/constants';
+import {SEARCH_RESULT, NEWS_BLOCK, PRELOAD, NOT_FOUND, BUTTON, ERROR_MESSAGE, INPUT, REG_EX, SEARCH_ERROR_MASSEGE} from '../constants/constants';
 
 export default class SearchINPUT {
     constructor(cardsList, dataStorage, newsApi, request, WORDS) {
@@ -51,7 +51,6 @@ export default class SearchINPUT {
                 this._newsApi.getNews(this._request.value)
                     .then(res => {
                         this._dataStorage.saveNews(res);
-                        console.log(res);
                         return res.articles;
                     })
                     .then(news => {
@@ -60,14 +59,13 @@ export default class SearchINPUT {
                     })
                     .then(news => {
                         if (news.length != 0) {
-                            console.log(news);
                             this._cardsList.renderCards(news);
                             NEWS_BLOCK.style.display = 'block';
                         } else NOT_FOUND.style.display = 'flex';
                     })
                     .catch(err => {
                         console.log(err);
-                        alert('Что-то пошло не так...');
+                        SEARCH_ERROR_MASSEGE.style.display = 'block';
                     })
                     .finally(() => {
                         PRELOAD.style.display = 'none';

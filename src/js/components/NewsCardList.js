@@ -1,5 +1,5 @@
 import NewsCard from './NewsCard';
-import {NEW_BUTTON} from '../constants/constants';
+import {NEW_BUTTON, SEARCH_ERROR_MASSEGE} from '../constants/constants';
 
 export default class NewsCardList extends NewsCard {
     constructor(container) {
@@ -11,9 +11,7 @@ export default class NewsCardList extends NewsCard {
     renderCards(news) {
         const cardList = document.createElement('ul');
         cardList.classList.add('news__list');
-        console.log(news);
         let arr = news.slice(this._i, this._i + 3);
-        console.log(arr);
         arr.forEach((elem) => {
             cardList.insertAdjacentHTML("afterbegin", this.create(elem));
             this._container.append(cardList);
@@ -26,6 +24,7 @@ export default class NewsCardList extends NewsCard {
 
     clearList() {
         NEW_BUTTON.style.display = 'block';
+        SEARCH_ERROR_MASSEGE.style.display = 'none';
         document.querySelector('.news__list-container').innerHTML = '';
         this._i = 0;
     }
