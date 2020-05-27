@@ -1,6 +1,6 @@
-import {SEARCH_RESULT, NEWS_BLOCK, PRELOAD, NOT_FOUND, BUTTON, ERROR_MESSAGE, INPUT, REG_EX, SEARCH_ERROR_MASSEGE} from '../constants/constants';
+import { searchForm, searchResult, newsBlock, preloader, notFound, button, errorMassege, input, REG_EX, searchErrorMassege } from '../constants/constants';
 
-export default class SearchINPUT {
+export default class SearchInput {
     constructor(cardsList, dataStorage, newsApi, request, WORDS) {
         this._cardsList = cardsList;
         this._dataStorage = dataStorage;
@@ -16,38 +16,37 @@ export default class SearchINPUT {
         });
 
         if (REG_EX.test(this._request.value)) {
-            ERROR_MESSAGE.textContent = this._WORDS.RU.ERROR;
-            ERROR_MESSAGE.style.boxShadow = '0px 0px 20px 10px #cc2a2a';
+            errorMassege.textContent = this._WORDS.RU.ERROR;
+            errorMassege.style.boxShadow = '0px 0px 20px 10px #cc2a2a';
             if (window.innerWidth <= 450) {
-                ERROR_MESSAGE.style.top = '-25%';
+                errorMassege.style.top = '-25%';
             } else {
-                ERROR_MESSAGE.style.top = '100%';
+                errorMassege.style.top = '100%';
             }
-            INPUT.classList.add('search-form__input_error');
+            input.classList.add('search-form__input_error');
             return false;
         } else {
-            ERROR_MESSAGE.style.top = '0%';
-            ERROR_MESSAGE.style.boxShadow = 'none';
+            errorMassege.style.top = '0%';
+            errorMassege.style.boxShadow = 'none';
             setTimeout(() => {
-                ERROR_MESSAGE.textContent = '';
+                errorMassege.textContent = '';
             }, 300);
-            INPUT.classList.remove('search-form__input_error');
+            input.classList.remove('search-form__input_error');
             return true;
         }
     }
 
     submit() {
-
-        document.forms[0].addEventListener('submit', (event) => {
+        searchForm.addEventListener('submit', (event) => {
             event.preventDefault();
             if (this.validation()) {
 
-                BUTTON.setAttribute('disabled', 'disabled');
+                button.setAttribute('disabled', 'disabled');
                 this._cardsList.clearList();
-                NEWS_BLOCK.style.display = 'none';
-                NOT_FOUND.style.display = 'none';
-                SEARCH_RESULT.style.display = 'block';
-                PRELOAD.style.display = 'block';
+                newsBlock.style.display = 'none';
+                notFound.style.display = 'none';
+                searchResult.style.display = 'block';
+                preloader.style.display = 'block';
                 this._newsApi.getNews(this._request.value)
                     .then(res => {
                         this._dataStorage.saveNews(res);
@@ -60,16 +59,16 @@ export default class SearchINPUT {
                     .then(news => {
                         if (news.length != 0) {
                             this._cardsList.renderCards(news);
-                            NEWS_BLOCK.style.display = 'block';
-                        } else NOT_FOUND.style.display = 'flex';
+                            newsBlock.style.display = 'block';
+                        } else notFound.style.display = 'flex';
                     })
                     .catch(err => {
                         console.log(err);
-                        SEARCH_ERROR_MASSEGE.style.display = 'block';
+                        searchErrorMassege.style.display = 'block';
                     })
                     .finally(() => {
-                        PRELOAD.style.display = 'none';
-                        BUTTON.removeAttribute('disabled');
+                        preloader.style.display = 'none';
+                        button.removeAttribute('disabled');
                     });
             }
         });

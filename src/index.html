@@ -8,7 +8,7 @@
     <meta name="author" content="Михайлов Руслан">
     <title>Дипломная работа</title>
     <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.index.css %>">
-    <link rel="icon" type="image/jpg"  href="<%=require('./images/favicon.jpg').default%>">
+    <link rel="icon" type="image/jpg" href="<%=require('./images/favicon.jpg').default%>">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
         <section class="search header-index__search">
             <h2 class="search__title">Что в мире творится?</h2>
             <p class="search__paragraph"> Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
-            <form action="http://httpbin.org/post" method="post" class="search-form search__search-form">
+            <form action="http://httpbin.org/post" method="post" class="search-form search__search-form" name="search">
                 <input type="text" class="search-form__input" name="search" placeholder="Введите тему новости" required minlength="2">
                 <button class="search-form__button" type="submit" disabled>Искать</button>
                 <span class="error-massege"></span>

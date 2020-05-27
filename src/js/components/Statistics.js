@@ -5,9 +5,9 @@ export default class Statistics {
         this._dataStorage = dataStorage;
     }
 
-    serch(arr, request) {
+    serch(arrNews, request) {
         let regEx = new RegExp(request, 'ig');
-        arr.forEach(({ title }) => {
+        arrNews.forEach(({ title }) => {
 
             let words = title.match(regEx).length;
 
@@ -52,7 +52,7 @@ export default class Statistics {
 
     /**
      * @return {Array} возвращает массив дней недели от сегоднешнего до - 6 дней
-    */
+     */
     _getWeekDays() {
         let arrWeekDays = [];
         for (let i = 0; i < 7; i++) {
@@ -87,20 +87,20 @@ export default class Statistics {
     }
 
     /**
-     * @param {Array} arr масив новостей
+     * @param {Array} arrNews масив новостей
      * @param {String} request запрос для поиска
      * @return {Number} возвращает сумму запроса повторений в заголовке и описании новостей
-    */
-    _serchAll(arr, request) {
+     */
+    _serchAll(arrNews, request) {
         this._amountWordAall = 0;
         let regEx = new RegExp(request, 'ig');
-        arr.forEach(({ title, description }) => {
+        arrNews.forEach(({ title, description }) => {
             let wordsTitle = title.match(regEx).length;
             let wordsDescription = description != null && description.match(regEx) != null && description.match(regEx).length != null ? description.match(regEx).length : 0;
             this._amountWordAall += wordsTitle + wordsDescription;
         });
         return this._amountWordAall;
-         
+
     }
 
     displayStatistics(arrElems) {

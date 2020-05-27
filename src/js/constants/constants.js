@@ -1,61 +1,66 @@
 const TOKEN = '7b31ce5e97e84514a00962ee4b35b7cd';
 const SEVEN_DAYS = 7 * 24 * 3600 * 1000;
-
-
-let INPUT_SEARCH = document.querySelector('.search-form__input');
-let CARD_LIST_CONTAINER = document.querySelector('.news__list-container');
-let NEW_BUTTON = document.querySelector('.news__button');
-
+const ONE_DAY = 24 * 3600 * 1000;
+const THREE_CARDS = 3;
 const WORDS = {
     RU: {
         ERROR: 'Используйте только кириллицу и латиницу'
     }
 };
 
+
+const inputSearch = document.querySelector('.search-form__input');
+const cardListContainer = document.querySelector('.news__list-container');
+const newsButton = document.querySelector('.news__button');
+const searchForm = document.forms.search;
+
 // элементы таблицы аналитики
-let TABLE_DATE = document.querySelectorAll('.table__item-date');
-let TABLE_GRAPHS = document.querySelectorAll('.table__item-graph');
-let TABLE_SCALES = document.querySelectorAll('.table__item-scale');
+const tableDate = document.querySelectorAll('.table__item-date');
+const tableGraphs = document.querySelectorAll('.table__item-graph');
+const tableScales = document.querySelectorAll('.table__item-scale');
 
 
 // элементы результата поиска
-const SEARCH_RESULT = document.querySelector('.search-result');
-const NEWS_BLOCK = document.querySelector('.news');
-const PRELOAD = document.querySelector('.preloader');
-const NOT_FOUND = document.querySelector('.not-found');
-const BUTTON = document.querySelector('.search-form__button');
-const SEARCH_ERROR_MASSEGE = document.querySelector('.serch-result__error-massege');
+const searchResult = document.querySelector('.search-result');
+const newsBlock = document.querySelector('.news');
+const preloader = document.querySelector('.preloader');
+const notFound = document.querySelector('.not-found');
+const button = document.querySelector('.search-form__button');
+const searchErrorMassege = document.querySelector('.serch-result__error-massege');
 
 
 // элементы для валидации
-const ERROR_MESSAGE = document.querySelector('.error-massege');
-const INPUT = document.querySelector('.search-form__input');
+const errorMassege = document.querySelector('.error-massege');
+const input = document.querySelector('.search-form__input');
 
 // регулярное выражение для валидации
 const REG_EX = /[^\wа-яА-ЯёЁ\s_]/;
 
-// прокси, посути не нужен, но пусть на всякий туту полежит
+// прокси, посути не нужен, но пусть на всякий тут полежит
 const PROXY = 'https://cors-anywhere.herokuapp.com/';
 
 export {
     TOKEN,
     SEVEN_DAYS,
-    TABLE_DATE,
-    TABLE_GRAPHS,
-    TABLE_SCALES,
+    tableDate,
+    tableGraphs,
+    tableScales,
     WORDS,
-    CARD_LIST_CONTAINER,
-    INPUT_SEARCH,
-    NEW_BUTTON,
-    SEARCH_RESULT,
-    NEWS_BLOCK,
-    PRELOAD,
-    NOT_FOUND,
-    BUTTON,
-    ERROR_MESSAGE,
-    INPUT,
+    cardListContainer,
+    inputSearch,
+    newsButton,
+    searchResult,
+    newsBlock,
+    preloader,
+    notFound,
+    button,
+    errorMassege,
+    input,
     REG_EX,
-    SEARCH_ERROR_MASSEGE,
-    PROXY
-    
+    searchErrorMassege,
+    searchForm,
+    PROXY,
+    THREE_CARDS,
+    ONE_DAY
+
 };
