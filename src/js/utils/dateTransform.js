@@ -3,7 +3,7 @@ export default function dateTransform(date) {
     let correctDate = date.split('-');
 
     correctDate[2] = correctDate[2].replace(/.{10}$/, '');
-    let mounth = +correctDate[1];
+    const mounth = +correctDate[1];
 
     switch (mounth) {
         case 1: 

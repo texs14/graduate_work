@@ -1,3 +1,5 @@
+import { ONE_DAY } from '../constants/constants';
+
 export default class Statistics {
     constructor(dataStorage) {
         this._amountWords = 0;
@@ -6,10 +8,10 @@ export default class Statistics {
     }
 
     serch(arrNews, request) {
-        let regEx = new RegExp(request, 'ig');
+        const regEx = new RegExp(request, 'ig');
         arrNews.forEach(({ title }) => {
 
-            let words = title.match(regEx).length;
+            const words = title.match(regEx).length;
 
             this._amountWords += words;
         });
@@ -22,15 +24,15 @@ export default class Statistics {
      * исключая новости без указания двты
      */
     _sortByDay() {
-        let arrDays = this._getDatesArr();
-        let sortArrByDay = [];
+        const arrDays = this._getDatesArr();
+        const sortArrByDay = [];
         for (let i = 0; i < 7; i++) {
-            let regEx = new RegExp(`^.{8}${arrDays[i]}`, ''); //создаётся регулярноее выражение выбирающее дату
+            const regEx = new RegExp(`^.{8}${arrDays[i]}`, ''); //создаётся регулярноее выражение выбирающее дату
 
-            let arr = this._dataStorage.getNews().articles.filter((item) => {
+            const arrNewsForDay = this._dataStorage.getNews().articles.filter((item) => {
                 return item.publishedAt.match(regEx) != null;
             });
-            sortArrByDay[i] = arr;
+            sortArrByDay[i] = arrNewsForDay;
         }
 
         return sortArrByDay;
@@ -41,10 +43,10 @@ export default class Statistics {
      * @return{Array} озвращает массив дней с сегодняшнего по - 6 дней
      */
     _getDatesArr() {
-        let arrDays = [];
+        const arrDays = [];
         for (let i = 0; i < 7; i++) {
-            let dat = new Date(new Date() - i * 24 * 3600 * 1000);
-            let day = dat.getDate();
+            const dat = new Date(new Date() - i * ONE_DAY);
+            const day = dat.getDate();
             arrDays[i] = `${day}`;
         }
         return arrDays;
@@ -54,10 +56,10 @@ export default class Statistics {
      * @return {Array} возвращает массив дней недели от сегоднешнего до - 6 дней
      */
     _getWeekDays() {
-        let arrWeekDays = [];
+        const arrWeekDays = [];
         for (let i = 0; i < 7; i++) {
-            let dat = new Date(new Date() - i * 24 * 3600 * 1000);
-            let day = dat.getDay();
+            const dat = new Date(new Date() - i * ONE_DAY);
+            const day = dat.getDay();
 
             switch (day) {
                 case 1:
@@ -93,10 +95,10 @@ export default class Statistics {
      */
     _serchAll(arrNews, request) {
         this._amountWordAall = 0;
-        let regEx = new RegExp(request, 'ig');
+        const regEx = new RegExp(request, 'ig');
         arrNews.forEach(({ title, description }) => {
-            let wordsTitle = title.match(regEx).length;
-            let wordsDescription = description != null && description.match(regEx) != null && description.match(regEx).length != null ? description.match(regEx).length : 0;
+            const wordsTitle = title.match(regEx).length;
+            const wordsDescription = description != null && description.match(regEx) != null && description.match(regEx).length != null ? description.match(regEx).length : 0;
             this._amountWordAall += wordsTitle + wordsDescription;
         });
         return this._amountWordAall;
@@ -104,8 +106,8 @@ export default class Statistics {
     }
 
     displayStatistics(arrElems) {
-        let arrDays = this._getDatesArr().reverse();
-        let arrWeekDays = this._getWeekDays().reverse();
+        const arrDays = this._getDatesArr().reverse();
+        const arrWeekDays = this._getWeekDays().reverse();
 
         arrElems.forEach((el, index) => {
             el.textContent = `${arrDays[index]}, ${arrWeekDays[index]}`;
@@ -114,14 +116,14 @@ export default class Statistics {
     }
 
     displayGraphs(arrGraphs, arrScalse = [0]) {
-        let sortByDay = this._sortByDay().reverse();
-        let request = this._dataStorage.getRequest().replace(/"/g, '');
+        const sortByDay = this._sortByDay().reverse();
+        const request = this._dataStorage.getRequest().replace(/"/g, '');
 
-        let arrSerchResult = sortByDay.map((el, index) => {
+        const arrSerchResult = sortByDay.map((el, index) => {
             return this._serchAll(sortByDay[index], request);
         });
 
-        let newArrSerchResult = arrSerchResult.slice();
+        const newArrSerchResult = arrSerchResult.slice();
 
         let coefficient = 1;
         let stepScales = 25;
@@ -146,7 +148,7 @@ export default class Statistics {
         }
 
         arrGraphs.forEach((el, index) => {
-            let searchResult = this._serchAll(sortByDay[index], request);
+            const searchResult = this._serchAll(sortByDay[index], request);
             if (index < 5) arrScalse[index].textContent = index * stepScales;
             el.textContent = searchResult;
             el.style.width = `${searchResult * coefficient}%`;

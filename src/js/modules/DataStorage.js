@@ -2,17 +2,19 @@ export default class DataStorage {
     constructor() {}
 
     getNews() {
-        let news = JSON.parse(localStorage.news);
-        return news;
+        if (localStorage.news){
+            const news = JSON.parse(localStorage.getItem(`news`));
+            return news;
+        } else return false;
     }
 
     getCommits() {
-        let commits = JSON.parse(localStorage.commits);
+        const commits = JSON.parse(localStorage.getItem(`commits`));
         return commits;
     }
 
     getRequest() {
-        let request = localStorage.request;
+        const request = localStorage.getItem(`request`);
         return request;
     }
 
@@ -26,5 +28,9 @@ export default class DataStorage {
 
     saveRequest(request) {
         localStorage.setItem('request', JSON.stringify(request.value.replace(/^\s*|\s*$/g, '')));
+    }
+
+    removeNews() {
+        localStorage.removeItem(`news`);
     }
 }

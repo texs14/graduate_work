@@ -1,4 +1,6 @@
-import { searchForm, searchResult, newsBlock, preloader, notFound, button, errorMassege, input, REG_EX, searchErrorMassege } from '../constants/constants';
+import { searchForm, searchResult, newsBlock, preloader, notFound, button, errorMassege, inputSearch, REG_EX, searchErrorMassege, searchButton } from '../constants/constants';
+import showError from '../utils/showError';
+import hideError from '../utils/hideError';
 
 export default class SearchInput {
     constructor(cardsList, dataStorage, newsApi, request, WORDS) {
@@ -9,29 +11,25 @@ export default class SearchInput {
         this._WORDS = WORDS;
     }
 
-    validation() {
-        document.querySelector('.search-form__input').addEventListener('input', (e) => {
-            if (e.target.value.length > 1) document.querySelector('.search-form__button').removeAttribute('disabled');
-            else document.querySelector('.search-form__button').setAttribute('disabled', 'disabled');
-        });
-
-        if (REG_EX.test(this._request.value)) {
-            errorMassege.textContent = this._WORDS.RU.ERROR;
-            errorMassege.style.boxShadow = '0px 0px 20px 10px #cc2a2a';
-            if (window.innerWidth <= 450) {
-                errorMassege.style.top = '-25%';
+    validationLingth() {
+        inputSearch.addEventListener('input', (e) => {
+            if (!(e.target.value.length > 1)) {
+                searchButton.setAttribute('disabled', 'disabled');
+                showError(this._WORDS.RU.ERROR_LENGTH);
             } else {
-                errorMassege.style.top = '100%';
+                searchButton.removeAttribute('disabled');
+                hideError();
             }
-            input.classList.add('search-form__input_error');
+        });
+    }
+
+
+    validationSings() {
+        if (REG_EX.test(this._request.value)) {
+            showError(this._WORDS.RU.ERROR_SINGS);
             return false;
         } else {
-            errorMassege.style.top = '0%';
-            errorMassege.style.boxShadow = 'none';
-            setTimeout(() => {
-                errorMassege.textContent = '';
-            }, 300);
-            input.classList.remove('search-form__input_error');
+            hideError();
             return true;
         }
     }
@@ -39,9 +37,9 @@ export default class SearchInput {
     submit() {
         searchForm.addEventListener('submit', (event) => {
             event.preventDefault();
-            if (this.validation()) {
-
+            if (this.validationSings()) {
                 button.setAttribute('disabled', 'disabled');
+                inputSearch.setAttribute('disabled', 'disabled');
                 this._cardsList.clearList();
                 newsBlock.style.display = 'none';
                 notFound.style.display = 'none';
@@ -69,6 +67,7 @@ export default class SearchInput {
                     .finally(() => {
                         preloader.style.display = 'none';
                         button.removeAttribute('disabled');
+                        inputSearch.removeAttribute('disabled');
                     });
             }
         });

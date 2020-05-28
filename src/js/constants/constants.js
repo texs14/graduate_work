@@ -4,12 +4,13 @@ const ONE_DAY = 24 * 3600 * 1000;
 const THREE_CARDS = 3;
 const WORDS = {
     RU: {
-        ERROR: 'Используйте только кириллицу и латиницу'
+        ERROR_SINGS: 'Используйте только кириллицу и латиницу',
+        ERROR_LENGTH: 'Теема должны быть не короче двух букв'
     }
 };
 
+const baseUrl = location.origin + location.pathname.replace(/[a-z.]*[a=z]*$/, '');
 
-const inputSearch = document.querySelector('.search-form__input');
 const cardListContainer = document.querySelector('.news__list-container');
 const newsButton = document.querySelector('.news__button');
 const searchForm = document.forms.search;
@@ -30,8 +31,9 @@ const searchErrorMassege = document.querySelector('.serch-result__error-massege'
 
 
 // элементы для валидации
+const searchButton = document.querySelector('.search-form__button')
 const errorMassege = document.querySelector('.error-massege');
-const input = document.querySelector('.search-form__input');
+const inputSearch = document.querySelector('.search-form__input');
 
 // регулярное выражение для валидации
 const REG_EX = /[^\wа-яА-ЯёЁ\s_]/;
@@ -55,10 +57,11 @@ export {
     notFound,
     button,
     errorMassege,
-    input,
     REG_EX,
     searchErrorMassege,
     searchForm,
+    searchButton,
+    baseUrl,
     PROXY,
     THREE_CARDS,
     ONE_DAY

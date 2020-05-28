@@ -4,8 +4,8 @@ import Statistics from '../js/components/Statistics';
 import { tableDate, tableGraphs, tableScales } from '../js/constants/constants';
 import getMonth from '../js/utils/getMonth';
 
-let data = new DataStorage();
-let statistics = new Statistics(data);
+const data = new DataStorage();
+const statistics = new Statistics(data);
 
 // вывод на страницу текущего месяца, запроса, колличество новостей и совпадений в загаловках
 document.querySelector('.table__title_month').textContent = `(${getMonth()})`;

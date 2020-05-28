@@ -1,9 +1,9 @@
 import CommitCard from './CommitCard';
-import { mySwiper } from '../../vendor/swiper/swiper';
+import { mySwiper } from '../../../node_modules/swiper/js/mySwiper';
 
-export default class CommitCardList extends CommitCard {
-    constructor(dataStorage, gitApi) {
-        super();
+export default class CommitCardList {
+    constructor(dataStorage, gitApi, commitCard) {
+        this._commitCard = commitCard;
         this._gitApi = gitApi;
         this._dataStorage = dataStorage;
     }
@@ -17,7 +17,7 @@ export default class CommitCardList extends CommitCard {
             .then(commits => {
                 commits.forEach(commit => {
                     mySwiper.appendSlide(
-                        this.createCard(
+                        this._commitCard.createCard(
                             commit.commit.author.date,
                             commit.author.avatar_url,
                             commit.commit.author.email,
