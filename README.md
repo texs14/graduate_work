@@ -13,12 +13,6 @@
 ```
   
 
-## Развернуть проект
-
-```  
- $ npm run deploy
-```
-
 ## Запустить локальный сервер для разработки
 
 ```  
@@ -31,6 +25,6 @@
  $ npm run build
 ```
 
-### [Ссылка сайт](https://texs14.github.io/graduate_work/index.html)
-
+### [Ссылка на сайт](https://texs14.github.io/graduate_work/index.html)
+#### (из-за изменения политики "News API", поиск работает только на локальном сервере)
 ### v0.0.1
