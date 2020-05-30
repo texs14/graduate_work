@@ -1,9 +1,11 @@
 @import url(./__paragraph/not-found__paragraph.css);
 @import url(./__title/not-found__title.css);
+@import url(./__image/not-found__image.css);
 .not-found {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column;
     max-width: 350px;
+    margin: auto;
 }

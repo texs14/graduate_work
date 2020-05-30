@@ -13,7 +13,16 @@
     position: absolute;
     right: 0;
     bottom: 0;
+    z-index: 999;
     padding-bottom: 6px;
+}
+
+.search-form__button:disabled {
+    background: #8290a8;
+}
+
+.search-form__button:disabled:hover {
+    background: #8290a8;
 }
 
 .search-form__button:hover {

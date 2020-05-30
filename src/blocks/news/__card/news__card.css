@@ -1,10 +1,12 @@
 .news__card {
     margin-right: 16px;
     background-color: #fff;
+    max-width: calc(33% - 8px);
     height: 578px;
     position: relative;
     border-radius: 16px;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .news__card:last-child {
@@ -13,6 +15,19 @@
 
 .news__card:hover {
     box-shadow: rgb(8, 29, 45, .1) 10px 9px 50px;
+}
+
+
+@media (max-width: 1200px) {
+    .news__card {
+        max-width: 31.8%;
+    }
+}
+
+@media (max-width: 930px) {
+    .news__card {
+        max-width: 31.65%;
+    }
 }
 
 
@@ -25,6 +40,7 @@
 
 @media (max-width: 680px) {
     .news__card {
+        max-width: 100%;
         margin-bottom: 8px;
         margin-right: 0;
     }

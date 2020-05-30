@@ -10,6 +10,7 @@
 @import url(./__title/news__title.css);
 @import url(./__news-text-wrapper/news__news-text-wrapper.css);
 @import url(./__button/news__button.css);
+@import url(./__card-link/news__card-link.css);
 
 .news {
     
