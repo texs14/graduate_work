@@ -61,7 +61,7 @@ export default class SearchInput {
                         } else notFound.style.display = 'flex';
                     })
                     .catch(err => {
-                        console.log(err);
+                        console.log("Номер ошибки сервера:" + err);
                         searchErrorMassege.style.display = 'block';
                     })
                     .finally(() => {
